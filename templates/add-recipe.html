@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление рецепта</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .form-control {
+            border-color: #b09a81;
+        }
+        .form-control:focus {
+            border-color: #b09a81;
+            box-shadow: 0 0 0 0.2rem rgba(176, 154, 129, 0.25);
+        }
+        .btn-primary {
+            background-color: #b09a81;
+            border-color: #b09a81;
+        }
+        .btn-primary:hover {
+            background-color: #967f66;
+            border-color: #967f66;
+        }
+        .text-center {
+            color: #b09a81;
+        }
+        body {
+      background-color: #f8f9fa;
+      font-family: 'Roboto', sans-serif;
+    }
+    .navbar-brand {
+      color: #59351F;
+      font-size: 24px;
+    }
+    .navbar-nav .nav-link {
+      color: #59351F;
+    }
+    .navbar-text {
+      font-size: 24px;
+    }
+    h1 {
+      font-size: 48px;
+      margin-top: 50px;
+      color: #59351F;
+    }
+    p {
+      font-size: 18px;
+      color: #59351F;
+    }
+    .img-fluid {
+      max-height: 400px;
+      margin-top: 50px;
+      border: 5px solid #eddccf;
+      border-radius: 10px;
+      background-color: #eddccf;
+    }
+    .br-container {
+      border: 5px solid #eddccf;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: #eddccf;
+    }
+    .btn-brown {
+      background-color: #8B4513;
+      border-color: #8B4513;
+      color: #fff;
+    }
+
+    .btn-brown:hover {
+      background-color: #733C12;
+      border-color: #733C12;
+    }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #eeded2">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Книга рецептов</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Переключатель навигации">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="/recipes">Рецепты</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/add-recipe">Добавить рецепт</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">Профиль</a>
+        </li>
+      </ul>
+      <span class="navbar-text mx-auto" style="color: #59351F; font-size: 30px;">
+        Книга рецептов в вашем браузере!
+      </span>
+    </div>
+  </div>
+</nav>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Добавление рецепта</h2>
+        <form action="/add-recipe" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="recipe_name">Название рецепта:</label>
+                <input type="text" class="form-control" id="recipe_name" name="recipe_name">
+            </div>
+
+            <div class="form-group">
+                <label for="recipe_description">Описание рецепта:</label>
+                <textarea class="form-control" id="recipe_description" name="recipe_description"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="recipe_ingredients">Ингредиенты:</label>
+                <textarea class="form-control" id="recipe_ingredients" name="recipe_ingredients"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="recipe_instructions">Инструкции:</label>
+                <textarea class="form-control" id="recipe_instructions" name="recipe_instructions"></textarea>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Добавить рецепт</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

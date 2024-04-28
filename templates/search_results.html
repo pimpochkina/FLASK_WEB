@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты поиска</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+      background-color: #f8f9fa;
+      font-family: 'Roboto', sans-serif;
+    }
+    .navbar-brand {
+      color: #59351F;
+      font-size: 24px;
+    }
+    .navbar-nav .nav-link {
+      color: #59351F;
+    }
+    .navbar-text {
+      font-size: 24px;
+    }
+    h1 {
+      font-size: 48px;
+      margin-top: 50px;
+      color: #59351F;
+    }
+    p {
+      font-size: 18px;
+      color: #59351F;
+    }
+    .img-fluid {
+      max-height: 400px;
+      margin-top: 50px;
+      border: 5px solid #eddccf;
+      border-radius: 10px;
+      background-color: #eddccf;
+    }
+    .br-container {
+      border: 5px solid #eddccf;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: #eddccf;
+    }
+    .btn-brown {
+      background-color: #8B4513;
+      border-color: #8B4513;
+      color: #fff;
+    }
+
+    .btn-brown:hover {
+      background-color: #733C12;
+      border-color: #733C12;
+    }
+        body {
+            background-color: #f2e9de;
+            color: #59351F;
+        }
+        .container {
+            background-color: #d3c1ae;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .card {
+            background-color: #f2e9de;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .card-title {
+            color: #59351F;
+        }
+        .card-text {
+            color: #59351F;
+        }
+        .btn-primary {
+            background-color: #59351F;
+            border-color: #59351F;
+        }
+        .btn-primary:hover {
+            background-color: #452a17;
+            border-color: #452a17;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #eeded2">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Книга рецептов</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Переключатель навигации">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="/recipes">Рецепты</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/add-recipe">Добавить рецепт</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">Профиль</a>
+        </li>
+      </ul>
+      <span class="navbar-text mx-auto" style="color: #59351F; font-size: 30px;">
+        Книга рецептов в вашем браузере!
+      </span>
+    </div>
+  </div>
+</nav>
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">Результаты поиска</h1>
+        {% for recipe in recipes %}
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">{{ recipe.name }}</h5>
+                <p class="card-text">{{ recipe.tags }}</p>
+                <a href="{{ url_for('recipe', id=recipe.id) }}" class="btn btn-primary">Читать рецепт</a>
+            </div>
+        </div>
+        {% else %}
+        <p>Ничего не найдено.</p>
+        {% endfor %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
